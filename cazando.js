@@ -101,7 +101,23 @@ function restarTiempo(){
     tiempo=tiempo-1;
     mostrarEnSpan("tiempo",tiempo);
     if(tiempo==0){
-            alert("Game Over");
+            alert("¡Game Over!, el tiempo se agotó");
             clearInterval(identificadorTiempo);
         }
+}
+
+function reiniciarJuego(){
+    clearInterval(identificadorTiempo);
+    puntos = 0;
+    tiempo = 10;
+    gatoX = (canvas.width / 2) - (ANCHO_GATO / 2);
+    gatoY = (canvas.height / 2) - (ALTO_GATO / 2);
+    comidaX = canvas.width - ANCHO_COMIDA;
+    comidaY = canvas.height - ALTO_COMIDA;
+    mostrarEnSpan("puntos", puntos);
+    mostrarEnSpan("tiempo", tiempo);
+    limpiarCanva();
+    graficarGato();
+    graficarComida();
+    identificadorTiempo = setInterval(restarTiempo, 1000);
 }
