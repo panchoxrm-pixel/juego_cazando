@@ -11,6 +11,8 @@ let gatoY=(canvas.height/2)-(ALTO_GATO/2);
 let comidaX=canvas.width-ANCHO_COMIDA;
 let comidaY=canvas.height-ALTO_COMIDA;
 
+let tiempo=10;
+
 function graficarGato(){
     graficarRectangulo(gatoX,gatoY,ANCHO_GATO,ALTO_GATO,"#391006");
 }
@@ -22,6 +24,8 @@ function graficarComida(){
 function iniciarJuego(){
     graficarGato();
     graficarComida();
+
+    setInterval(restarTiempo, 1000);
 }
 
 function graficarRectangulo(x,y,ancho,alto,color){
@@ -85,4 +89,9 @@ function AleatorioGraficarComida(){
     comidaX = generarAleatorio(0, canvas.width - ANCHO_COMIDA);
     comidaY = generarAleatorio(0, canvas.height - ALTO_COMIDA);
     graficarComida();
+}
+
+function restarTiempo(){
+    tiempo=tiempo-1;
+    mostrarEnSpan("tiempo",tiempo);
 }
