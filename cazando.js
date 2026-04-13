@@ -70,6 +70,19 @@ function detectarColision(){
         gatoX + ANCHO_GATO > comidaX &&
         gatoY < comidaY + ALTO_COMIDA &&
         gatoY + ALTO_GATO > comidaY){
+            
         alert("¡comido!");
+
+        limpiarCanva();
+
+        graficarGato();
+
+        AleatorioGraficarComida();
     }
+}
+
+function AleatorioGraficarComida(){
+    comidaX = generarAleatorio(0, canvas.width - ANCHO_COMIDA);
+    comidaY = generarAleatorio(0, canvas.height - ALTO_COMIDA);
+    graficarComida();
 }
