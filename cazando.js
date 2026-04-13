@@ -37,26 +37,39 @@ function moverIzquierda(){
     gatoX=gatoX-10;
     limpiarCanva();
     graficarGato();
-    graficarComida();    
+    graficarComida();
+    detectarColision();    
 }
 
 function moverDerecha(){
     gatoX=gatoX+10;
     limpiarCanva();
     graficarGato();
-    graficarComida();    
+    graficarComida();
+    detectarColision();    
 }
 
 function moverArriba(){
     gatoY=gatoY-10;
     limpiarCanva();
     graficarGato();
-    graficarComida();    
+    graficarComida();
+    detectarColision();    
 }
 
 function moverAbajo(){
     gatoY=gatoY+10;
     limpiarCanva();
     graficarGato();
-    graficarComida();    
+    graficarComida();
+    detectarColision();    
+}
+
+function detectarColision(){
+    if(gatoX < comidaX + ANCHO_COMIDA &&
+        gatoX + ANCHO_GATO > comidaX &&
+        gatoY < comidaY + ALTO_COMIDA &&
+        gatoY + ALTO_GATO > comidaY){
+        alert("¡comido!");
+    }
 }
