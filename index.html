@@ -1,34 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="cazando.css" />
-  <script src="utils.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Juego Cazando</title>
+  <link rel="stylesheet" href="cazando.css">
 </head>
-<body onload="iniciarJuego();">
+<body>
   <h1>Juego Cazando</h1>
   <p>Autor: Francisco Rodríguez</p>
-  <h3>Alimenta a este gato hambriento</h3>
+  <h3>Alimenta al gato</h3>
 
   <div class="game-container">
     <canvas id="areaJuego" width="500" height="500"></canvas>
-
     <div class="controles">
       <div class="dpad">
-        <button class="dir-btn up" onclick="moverArriba()">⬆</button>
-        <button class="dir-btn left" onclick="moverIzquierda()">⬅</button>
-        <button class="dir-btn right" onclick="moverDerecha()">➡</button>
-        <button class="dir-btn down" onclick="moverAbajo()">⬇</button>
+        <button class="dir-btn up" id="btnArriba">⬆</button>
+        <button class="dir-btn left" id="btnIzquierda">⬅</button>
+        <button class="dir-btn right" id="btnDerecha">➡</button>
+        <button class="dir-btn down" id="btnAbajo">⬇</button>
       </div>
-      <button class="reset-btn" onclick="reiniciarJuego()">🔄 Reiniciar</button>
+      <button class="reset-btn" id="btnReiniciar">🔄 Reiniciar</button>
     </div>
   </div>
 
   <div class="panel">
     <span>🐟 Pescados: <span id="puntos">0</span></span>
-    <span>⏱️ Tiempo: <span id="tiempo">25</span></span>
+    <span>⏱️ Tiempo: <span id="tiempo">10</span></span>
   </div>
-
   <p id="mensaje"></p>
 
   <script src="cazando.js"></script>
