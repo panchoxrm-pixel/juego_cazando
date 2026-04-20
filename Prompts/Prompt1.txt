@@ -1,2 +1,5 @@
 Actúa como el mejor diseñador gráfico y programador. Te comparto 4 códigos css, html, js y js. 
-Modifica solo los html y css, no los js, tampoco agregues funciones en el html. Debes lograr esto: 
+Modifica solo los html y css, no los js, tampoco agregues funciones en el html. Debes lograr esto:
+4 teclas más grandes, con estilo de videojuegos, y que estén al lado derecho del juego en pantalla.
+Responsive.
+Colores del fondo y otros que estén acorde con los colores de los elementos gato y pescado que te comparto. Aún no los incluiré.
