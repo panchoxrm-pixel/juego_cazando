@@ -1,42 +1,232 @@
+/* RESET y estilos base */
+* {
+  box-sizing: border-box;
+  user-select: none;
+}
+
 body {
   text-align: center;
-  font-family: Arial, sans-serif;
-  background: #f0f0f0;
+  font-family: 'Courier New', 'Press Start 2P', 'Segoe UI', monospace;
+  background: linear-gradient(145deg, #1e2a1a 0%, #0f140c 100%);
   margin: 0;
+  min-height: 100vh;
   padding: 20px;
+  color: #e0e0e0;
 }
 
 h1 {
+  font-size: 2.2rem;
+  text-shadow: 4px 4px 0 #391006;
+  letter-spacing: 2px;
   margin-bottom: 5px;
+  color: #ffd966;
 }
 
+h3 {
+  color: #27b83f;
+  text-shadow: 2px 2px 0 #1a4d1a;
+  margin-top: 5px;
+}
+
+/* Contenedor principal: canvas a la izquierda, controles a la derecha */
+.game-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  margin: 20px auto;
+  max-width: 1100px;
+}
+
+/* Canvas estilo pixelado / retro */
+canvas {
+  background: #2c2118;
+  border: 4px solid #27b83f;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5), inset 0 0 8px rgba(255,215,0,0.3);
+  transition: transform 0.1s ease;
+}
+
+canvas:active {
+  transform: scale(0.99);
+}
+
+/* Panel de controles a la derecha */
+.controles {
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(2px);
+  border-radius: 32px;
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  border: 2px solid #27b83f;
+  box-shadow: 0 8px 0 #391006;
+}
+
+/* D-pad estilo videojuego (grid 2x2) */
+.dpad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 12px;
+  place-items: center;
+  background: #1a1a1a;
+  padding: 18px;
+  border-radius: 40px;
+  box-shadow: inset 0 0 10px #000, 0 6px 0 #391006;
+}
+
+/* Posicionar botones en forma de cruz */
+.dpad .up {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+.dpad .left {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+.dpad .right {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+}
+.dpad .down {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+}
+
+/* Botones direccionales GRANDES y con estilo arcade */
+.dir-btn {
+  width: 85px;
+  height: 85px;
+  font-size: 48px;
+  background: #2a2a2a;
+  border: none;
+  border-radius: 24px;
+  color: #ffd966;
+  text-shadow: 3px 3px 0 #391006;
+  cursor: pointer;
+  transition: all 0.07s linear;
+  box-shadow: 0 6px 0 #391006, 0 4px 12px black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.dir-btn:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #391006;
+}
+
+.dir-btn:hover {
+  background: #3a2a1a;
+  color: #27b83f;
+  border: 1px solid #27b83f;
+}
+
+/* Botón reiniciar */
+.reset-btn {
+  font-size: 1.4rem;
+  padding: 12px 24px;
+  background: #391006;
+  color: #ffd966;
+  border: none;
+  border-radius: 40px;
+  font-family: monospace;
+  font-weight: bold;
+  letter-spacing: 2px;
+  cursor: pointer;
+  box-shadow: 0 5px 0 #1a0a02;
+  transition: 0.08s linear;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.reset-btn:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 #1a0a02;
+}
+
+/* Panel de puntuación y tiempo */
 .panel {
-  margin: 15px 0;
-  font-size: 18px;
+  margin: 25px auto 10px;
+  font-size: 1.6rem;
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 40px;
+  background: #000000aa;
+  backdrop-filter: blur(8px);
+  width: fit-content;
+  padding: 12px 32px;
+  border-radius: 60px;
+  border: 1px solid #27b83f;
+  font-weight: bold;
 }
 
-canvas {
-  background: white;
-  border: 2px solid black;
-}
-
-.controles {
-  margin-top: 20px;
-}
-
-button {
-  margin: 5px;
-  padding: 10px 16px;
-  font-size: 18px;
-  cursor: pointer;
+.panel span {
+  background: #1e2a1a;
+  padding: 8px 20px;
+  border-radius: 40px;
+  box-shadow: inset 0 0 4px #27b83f, 0 2px 4px black;
 }
 
 #mensaje {
-  font-size: 20px;
+  font-size: 1.2rem;
   font-weight: bold;
-  color: darkred;
-  margin-top: 15px;
+  color: #ffaa66;
+  text-shadow: 1px 1px 0 #391006;
+  margin-top: 20px;
+}
+
+/* RESPONSIVE: en pantallas menores a 800px los controles pasan debajo */
+@media (max-width: 800px) {
+  .game-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .controles {
+    width: 100%;
+    max-width: 320px;
+    margin-top: 10px;
+  }
+  
+  .dir-btn {
+    width: 70px;
+    height: 70px;
+    font-size: 40px;
+  }
+  
+  .panel {
+    font-size: 1.2rem;
+    gap: 20px;
+    padding: 8px 20px;
+  }
+  
+  h1 {
+    font-size: 1.6rem;
+  }
+}
+
+/* Ajustes para móviles muy pequeños */
+@media (max-width: 550px) {
+  .dir-btn {
+    width: 60px;
+    height: 60px;
+    font-size: 32px;
+  }
+  
+  .dpad {
+    gap: 8px;
+    padding: 12px;
+  }
+  
+  canvas {
+    width: 95%;
+    height: auto;
+    max-width: 500px;
+  }
 }
