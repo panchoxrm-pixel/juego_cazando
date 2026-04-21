@@ -19,7 +19,7 @@
   imgGato.src = "Gato_boca_abierta.png";
 
   const imgPescado = new Image();
-  imgPescado.src = "Pescado.jpg";
+  imgPescado.src = "Pescado.png";
 
   const imgFondo = new Image();
   imgFondo.src = "fondo.jpg";

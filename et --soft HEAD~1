@@ -1,0 +1,101 @@
+[33mcommit 87bca7ed4da357a867b9756076ff1f0d4f454ccc[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: Francisco Rodríguez <panchoxrm@gmail.com>
+Date:   Mon Apr 20 21:27:42 2026 -0500
+
+    Cambiar los elementos gato y pescado a transparente y crear txt de videos
+
+[33mcommit 48ea5f952238c3ed3fa54d84086025392016ad94[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: Francisco Rodríguez <panchoxrm@gmail.com>
+Date:   Mon Apr 20 20:47:49 2026 -0500
+
+    Modificar el juego para que, cada vez que el gato atrape la comida, el tiempo disponible se reduzca en 1 segundo respecto al valor anterior
+
+[33mcommit 4e34bcdeecf653f67b97950233e2786644ffcfa3[m
+Author: Francisco Rodríguez <panchoxrm@gmail.com>
+Date:   Mon Apr 20 00:53:07 2026 -0500
+
+    Reemplazar las figuras geométricas por un gato y un pescado y aaumentar el fondo, con ayuda de IA
+
+[33mcommit c6d64ac17a98489d5b4e66c0d7920faabcc38b2a[m
+Author: Francisco Rodríguez <panchoxrm@gmail.com>
+Date:   Sun Apr 19 23:41:01 2026 -0500
+
+    Cambiar el nombre del html a index
+
+[33mcommit 8af71881d5759e0379623b71f936f555b1452ac0[m
+Author: Francisco Rodríguez <panchoxrm@gmail.com>
+Date:   Sun Apr 19 23:32:14 2026 -0500
+
+    Mejorar la imagen del juego con ayuda de IA
+
+[33mcommit 6decc2cc5fd4c537149b0235dd4123c9a90ba355[m
+Author: Francisco Rodríguez <panchoxrm@gmail.com>
+Date:   Sun Apr 19 23:18:37 2026 -0500
+
+    Cambiar tamaños de los elementos y cambiar tiempo y puntaje para que sea más divertido
+
+[33mcommit e44e34c36d7c7f7cf2703b960e88fb72fa3a3637[m
+Author: Francisco Rodríguez <panchoxrm@gmail.com>
+Date:   Mon Apr 13 16:05:47 2026 -0500
+
+    feat: Agregar el botón Reiniciar
+
+[33mcommit cde96ec9e11e57a20e8486f60110b06b6d584895[m
+Author: Francisco Rodríguez <panchoxrm@gmail.com>
+Date:   Mon Apr 13 15:42:24 2026 -0500
+
+    feat: Agregar el puntaje y la condicional que determina si gana o pierde
+
+[33mcommit 172c349b935ab1ce7210c880475ca76160cc5b20[m
+Author: Francisco Rodríguez <panchoxrm@gmail.com>
+Date:   Mon Apr 13 15:04:32 2026 -0500
+
+    feat: Agregar el conteo regresivo desde 10 segundos
+
+[33mcommit 4fc071a630954319974b68c7ee878a3239036515[m
+Author: Francisco Rodríguez <panchoxrm@gmail.com>
+Date:   Mon Apr 13 09:46:35 2026 -0500
+
+    feat: Agregar el archivo de utilitarios y la función AleatorioGraficarComida
+
+[33mcommit 374668feb439d864c52b81443a493a610360ee97[m
+Author: Francisco Rodríguez <panchoxrm@gmail.com>
+Date:   Mon Apr 13 01:00:40 2026 -0500
+
+    feat: implementar detectarColision usando posiciones y dimensiones
+
+[33mcommit 7287f9620606091c965f62cbe6a4d92bf6e935b6[m
+Author: Francisco Rodríguez <panchoxrm@gmail.com>
+Date:   Mon Apr 13 00:33:10 2026 -0500
+
+    feat: implementar funciones para mover el gato hacia la derecha, arriba y abajo
+
+[33mcommit 5b3113ab48bc56af2e29c2d564ef9d01890144c6[m
+Author: Francisco Rodríguez <panchoxrm@gmail.com>
+Date:   Mon Apr 13 00:28:06 2026 -0500
+
+    feat: implementar funciones moverIzquierda y limpiarCanva
+
+[33mcommit c370461c8164bd24ee8863e70f5b3e95b76ee55e[m
+Author: Francisco Rodríguez <panchoxrm@gmail.com>
+Date:   Mon Apr 13 00:00:13 2026 -0500
+
+    refactor: Crear una función graficarRectangulo que reciba x, y, ancho, alto, color
+
+[33mcommit 268d7811186eb5a6e2ad082d216d99d836784268[m
+Author: Francisco Rodríguez <panchoxrm@gmail.com>
+Date:   Sun Apr 12 23:41:16 2026 -0500
+
+    feat: Crear variables y constantes del gato y la comida
+
+[33mcommit 1863aa8846922f727e2d4c07ab1b832dfa020162[m
+Author: Francisco Rodríguez <panchoxrm@gmail.com>
+Date:   Thu Apr 9 20:19:35 2026 -0500
+
+    feat: Creación de la etiqueta canvas en html, especificidades del canvas en js e invocación a la función desde html
+
+[33mcommit 0e97630520f1612a530cecef9461f431405951dc[m
+Author: Francisco Rodríguez <panchoxrm@gmail.com>
+Date:   Thu Apr 9 18:00:45 2026 -0500
+
+    feat: archivos base agregados: html, css, js
