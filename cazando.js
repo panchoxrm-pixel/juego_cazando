@@ -12,6 +12,7 @@
   let gatoX, gatoY, comidaX, comidaY;
   let puntos, tiempo;
   let identificadorTiempo = null;
+  let tiempoDeRonda = 15;
 
   // --- CARGA DE IMÁGENES ---
   const imgGato = new Image();
@@ -49,6 +50,10 @@
       puntos++;
       spanPuntos.textContent = puntos;
 
+      tiempoDeRonda--; 
+      tiempo = tiempoDeRonda; 
+      spanTiempo.textContent = tiempo;
+      
       if (puntos === 5) {
         clearInterval(identificadorTiempo); // Detiene el tiempo inmediatamente
         setTimeout(() => { 
@@ -61,9 +66,10 @@
       // Mover comida a posición aleatoria
       comidaX = Math.floor(Math.random() * (canvas.width - ANCHO_COMIDA));
       comidaY = Math.floor(Math.random() * (canvas.height - ALTO_COMIDA));
-      dibujar();
+      dibujar();    
     }
   }
+  
 
   function restarTiempo() {
     tiempo--;
@@ -71,6 +77,7 @@
     if (tiempo <= 0) {
       clearInterval(identificadorTiempo);
       alert("¡Game Over! Se acabó el tiempo.");
+      tiempoDeRonda=15;
       reiniciarJuego();
     }
   }
@@ -81,7 +88,7 @@
 
     // 2. Resetear valores lógicos
     puntos = 0;
-    tiempo = 10;
+    tiempo = tiempoDeRonda;
 
     // 3. Resetear visualmente los textos
     spanPuntos.textContent = puntos;
